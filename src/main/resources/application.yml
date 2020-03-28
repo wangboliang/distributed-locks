@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: distributed-locks
+  redis:
+    host: 192.168.154.129
+    port: 6379
+    timeout: 3600ms #超时时间
+    jedis:
+      pool:
+        max-active: 8 #最大连接数
+        max-idle: 8 #最大空闲连接 默认8
+        max-wait: -1ms #默认-1 最大连接阻塞等待时间
+        min-idle: 0 #最小空闲连接
+
+#zookeeper
+zk:
+  url: 192.168.154.129:2181
+  localPath: /mylock
+  timeout: 3000
+
+
